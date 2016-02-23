@@ -32,9 +32,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#PLACE TO PUT CUSTOM GEMS
+gem 'thin'
+gem 'font-awesome-rails'
+gem 'stamp'
+gem 'simple_form'
+gem 'bootstrap-sass', '~> 3.3.6'
+#best pracice is to put faker in dev only, but bc play app, can add here
+gem 'faker'
+gem 'populator'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
 end
 
 group :development do
@@ -43,5 +54,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+     #ADDING DEV GEMS HERE
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'annotate', '~> 2.6.6'
 end
 
