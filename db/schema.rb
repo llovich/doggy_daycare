@@ -30,9 +30,8 @@ ActiveRecord::Schema.define(version: 20160223161254) do
   create_table "custodies", force: :cascade do |t|
     t.integer  "owner_id"
     t.integer  "dog_id"
-    t.boolean  "primary",    default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "custodies", ["dog_id"], name: "index_custodies_on_dog_id"

@@ -4,11 +4,15 @@
 <div class="col-sm-2"></div>
 <div class="col-sm-8 well">
 
-<h2>Dog Info</h2>
-<p>
-  <strong>Name:</strong> <%= @dog.name %>
-
+<h2>Dog Info for <%= @dog.name %></h2>
+ <strong>Owners:</strong>
+ <ul>
+   <% @dog.owners.each do |owner| %>
+     <li><%= owner.name %></li>
+   <% end %>
+ </ul>
 </p>
+
 
 <p>
   <strong>DOB:</strong>
