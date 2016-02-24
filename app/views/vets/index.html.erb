@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Vets</h1>
+<h1>All Vets</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Doctor</th>
@@ -15,10 +15,10 @@
     <% @vets.each do |vet| %>
       <tr>
         <td><%= vet.doctor %></td>
-        <td><%= vet.clinic %></td>
-        <td><%= link_to 'Show', vet %></td>
-        <td><%= link_to 'Edit', edit_vet_path(vet) %></td>
-        <td><%= link_to 'Destroy', vet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= vet.clinic.name %></td>
+        <td><%= link_to fa_icon('eye', text: "view"), vet %></td>
+        <td><%= link_to fa_icon('pencil', text: "edit"), edit_vet_path(vet) %></td>
+        <td><%= link_to fa_icon('trash', text: "delete"), vet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Vet', new_vet_path %>
+<%= link_to fa_icon('plus', text: "Add New Vet"), new_vet_path, class:"btn btn-warning"  %>

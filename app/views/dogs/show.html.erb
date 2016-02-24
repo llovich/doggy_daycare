@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
 
+<h2>Dog Info</h2>
 <p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
+  <strong>Name:</strong> <%= @dog.name %>
+
 </p>
 
 <p>
-  <strong>Dob:</strong>
+  <strong>DOB:</strong>
   <%= @dog.dob %>
 </p>
 
 <p>
   <strong>Breed:</strong>
-  <%= @dog.breed %>
+  <%= @dog.breed.name %>
 </p>
 
 <p>
@@ -27,8 +32,13 @@
 
 <p>
   <strong>Vet:</strong>
-  <%= @dog.vet %>
+  <%= @dog.vet.doctor %>
 </p>
 
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%= link_to fa_icon('pencil', text:"edit"), edit_dog_path(@dog) %> |
+<%= link_to fa_icon('arrow-left', text:"back"), dogs_path %>
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>
+

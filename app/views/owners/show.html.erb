@@ -1,5 +1,12 @@
+
+<div class="container">
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
+
 <p id="notice"><%= notice %></p>
 
+<h2>Owner Info</h2>
 <p>
   <strong>First name:</strong>
   <%= @owner.first_name %>
@@ -24,6 +31,11 @@
   <strong>Emergency contact phone:</strong>
   <%= @owner.emergency_contact_phone %>
 </p>
+<br>
+<%= link_to fa_icon('pencil', text:"edit"), edit_owner_path(@owner) %> |
+<%= link_to fa_icon('arrow-left', text:"back"), owners_path %>
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path %>

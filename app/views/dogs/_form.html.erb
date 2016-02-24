@@ -1,16 +1,30 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
 <%= simple_form_for(@dog) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :dob %>
-    <%= f.association :breed %>
+    <%= f.input :dob, start_year: Date.today.year - 25, end_year: Date.today.year, order: [:month, :day, :year] %>
+    <%= f.association :breed, collection: Breed.order(:name) %>
+    <%= f.input :custodies %>
     <%= f.input :medical_conditions %>
     <%= f.input :in_daycare %>
-    <%= f.association :vet %>
+    <%= f.association :vet, collection: Vet.order(:doctor), label_method: :vet_clinic %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class:"btn btn-warning"%>
+  </div>
+  <div>
+  <br>
+  <%= link_to fa_icon('arrow-left ', text: "back"), dogs_path %> | <%= link_to fa_icon('eye', text: "view"), @dog %>
   </div>
 <% end %>
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>
+

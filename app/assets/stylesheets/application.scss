@@ -1,0 +1,76 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+$bkgd_bodycolor: #ffffff;
+$bkgd_navfootcolor: #C6E5D9;
+$font_navcolor: #777;
+$font_bodycolor: #777;
+$link_color: DodgerBlue;
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: $bkgd_bodycolor;
+    color: $font_bodycolor;
+}
+
+
+.navbar-default {
+    border-color: $bkgd_navfootcolor;
+    background-color: $bkgd_navfootcolor;
+    min-height: 130px;
+}
+
+.navbar-default .navbar-brand {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size:4em;
+    color: $font_navcolor;
+    padding-top:50px;
+    padding-left: 30px;
+  }
+
+.nav {
+    padding-top:50px;
+    padding-right:50px;
+    font-family: 'Lato', sans-serif;
+}
+
+.main{
+  padding-left:20px;
+}
+
+h1 {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size:3.5em;
+  }
+
+h2 {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size:3em;
+  }
+
+h3 {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size:2.5em;
+  }
+
+h4, h5 {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size:2em;
+  }
+
+p {
+    font-family: 'Lato', sans-serif;
+  }
+
+.form-inputs {
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    background-color: $bkgd_navfootcolor;
+    min-height: 120px;
+    padding:40px 60px 50px 60px;
+    margin-top:40px;
+
+}

@@ -1,12 +1,24 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
 <%= simple_form_for(@vet) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :doctor %>
-    <%= f.association :clinic %>
+    <%= f.association :clinic, collection: Clinic.order(:name) %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class:"btn btn-warning" %>
+  </div>
+ <br>
+  <%= link_to fa_icon('arrow-left ', text: "back"), vets_path %> | <%= link_to fa_icon('eye', text: "view"),  @vet %>
   </div>
 <% end %>
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>
+

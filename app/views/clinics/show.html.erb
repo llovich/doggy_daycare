@@ -1,5 +1,10 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
 <p id="notice"><%= notice %></p>
 
+<h2>Clinic Info</h2>
 <p>
   <strong>Name:</strong>
   <%= @clinic.name %>
@@ -14,6 +19,15 @@
   <strong>Fax:</strong>
   <%= @clinic.fax %>
 </p>
+<br>
+<%= link_to fa_icon('pencil', text:"edit"), edit_clinic_path(@clinic) %> |
+<%= link_to fa_icon('arrow-left', text:"back"), clinics_path %>
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_clinic_path(@clinic) %> |
-<%= link_to 'Back', clinics_path %>
+
+
+
+

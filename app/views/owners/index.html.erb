@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Owners</h1>
+<h1>All Owners</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>First name</th>
@@ -22,9 +22,9 @@
         <td><%= owner.phone %></td>
         <td><%= owner.emergency_contact_name %></td>
         <td><%= owner.emergency_contact_phone %></td>
-        <td><%= link_to 'Show', owner %></td>
-        <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
-        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon('eye', text: "view"), owner %></td>
+        <td><%= link_to fa_icon('pencil', text: "edit"), edit_owner_path(owner) %></td>
+        <td><%= link_to fa_icon('trash', text: "delete"), owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Owner', new_owner_path %>
+<%= link_to fa_icon('plus', text: "Add New Owner"), new_owner_path, class:"btn btn-warning"  %>
