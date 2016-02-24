@@ -15,10 +15,13 @@ class DogsController < ApplicationController
   # GET /dogs/new
   def new
     @dog = Dog.new
+    #creates a new instance of custodies for this dog, not yet saved
+    @dog.custodies.build
   end
 
   # GET /dogs/1/edit
   def edit
+    @dog.custodies.build
   end
 
   # POST /dogs
@@ -69,6 +72,6 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :dob, :breed_id, :medical_conditions, :in_daycare, :vet_id)
+      params.require(:dog).permit(:name, :dob, :breed_id, :medical_conditions, :in_daycare, :vet_id, custodies_attributes:[:id, :owner_id, :_destroy])
     end
 end

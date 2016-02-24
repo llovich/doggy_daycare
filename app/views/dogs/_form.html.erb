@@ -9,9 +9,17 @@
     <%= f.input :name %>
     <%= f.input :dob, start_year: Date.today.year - 25, end_year: Date.today.year, order: [:month, :day, :year] %>
     <%= f.association :breed, collection: Breed.order(:name) %>
-    <%= f.input :custodies %>
+
     <%= f.input :medical_conditions %>
     <%= f.input :in_daycare %>
+    <!-- in rails/ruby this is f.fields_for - look up this -->
+    <%= f.simple_fields_for(:custodies) do |custody_fields| %>
+      <%= custody_fields.association :owner, collection: Owner.order(:last_name, :first_name) %>
+      <%# Only show the destroy checkbox if a record is already saved %>
+      <% if custody_fields.object.persisted? %>
+        <%= custody_fields.input :_destroy, as: :boolean %>
+      <% end %>
+    <% end %>
     <%= f.association :vet, collection: Vet.order(:doctor), label_method: :vet_clinic %>
   </div>
 
