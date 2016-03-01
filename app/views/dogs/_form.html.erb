@@ -21,6 +21,13 @@
       <% end %>
     <% end %>
     <%= f.association :vet, collection: Vet.order(:doctor), label_method: :vet_clinic %>
+
+     <%= f.input :avatar, as: :file, label: "Upload a New Pup Image" %>
+    <% if @dog.avatar.exists? %>
+      <%= label_tag "Current Image" %>
+      <p><%= image_tag @dog.avatar.url(:thumb) %></p>
+      <br>
+    <% end %>
   </div>
 
   <div class="form-actions">

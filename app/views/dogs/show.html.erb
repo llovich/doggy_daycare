@@ -39,6 +39,10 @@
   <%= @dog.vet.doctor %>
 </p>
 
+<p>
+  <%= image_tag @dog.avatar.url(:medium) %>
+</p>
+
 <%= link_to fa_icon('pencil', text:"edit"), edit_dog_path(@dog) %> |
 <%= link_to fa_icon('arrow-left', text:"back"), dogs_path %>
 </div>

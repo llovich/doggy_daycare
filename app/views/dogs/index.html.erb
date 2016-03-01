@@ -5,8 +5,8 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Dob</th>
+      <th colspan="2">Dog</th>
+      <th>D.O.B.</th>
       <th>Breed</th>
       <th>Medical Conditions</th>
       <th>In daycare</th>
@@ -18,6 +18,7 @@
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
+        <td><%= image_tag dog.avatar.url(:thumb) %></td>
         <td><%= dog.name %></td>
         <td><%= dog.dob %></td>
         <td><%= dog.breed.name %></td>
